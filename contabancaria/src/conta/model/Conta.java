@@ -90,10 +90,6 @@ public class Conta {
 	}
 	
 	
-	
-	
-	
-	
 	public void visualizar() {
 		
 		String tipoConta = "";
@@ -120,6 +116,4 @@ public class Conta {
 		System.out.println("**********************************");
 	}
 	
-	
-  
 }

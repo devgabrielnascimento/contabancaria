@@ -27,15 +27,17 @@ public class Menu {
 		String nomeTitular = sc.next();
 		c1.setTitular(nomeTitular);
 		
-		int digito = 3;
+		int digito = 4;
 		
 		String menu = "Olá, " + nomeTitular + "\nDigite a opção que você deseja:"
 				+ "\n 1 - Para Sacar"
 				+ "\n 2 - Para Depositar"
+				+ "\n 3 - Para visualizar seu saldo atual"
 				+ "\n 0 - Para Sair";
 		
 
 		while(digito != 0) {
+			
 			System.out.println(menu);
 			
 			digito = sc.nextInt();
@@ -73,6 +75,15 @@ public class Menu {
 				
 				break;
 
+			}
+			
+			case 3: {
+				System.out.println("Seu saldo atual é: ");
+				System.out.println(c1.getSaldo());
+				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
+				digito = sc.nextInt();
+				
+				break;
 			}
 			
 			default: {
