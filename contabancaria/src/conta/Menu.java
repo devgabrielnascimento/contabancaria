@@ -32,11 +32,8 @@ public class Menu {
 		String menu = "Olá, " + nomeTitular + "\nDigite a opção que você deseja:"
 				+ "\n 1 - Para Sacar"
 				+ "\n 2 - Para Depositar"
-<<<<<<< Updated upstream
 				+ "\n 3 - Para visualizar seu saldo atual"
-=======
 				+ "\n 3 - Visualizar meu saldo atual"
->>>>>>> Stashed changes
 				+ "\n 0 - Para Sair";
 		
 
@@ -82,23 +79,16 @@ public class Menu {
 			}
 			
 			case 3: {
-<<<<<<< Updated upstream
 				System.out.println("Seu saldo atual é: ");
 				System.out.println(c1.getSaldo());
-=======
 				System.out.println("Seu saldo atual: ");
 				System.out.println(c1.getSaldo());
 				
->>>>>>> Stashed changes
 				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
 				digito = sc.nextInt();
 				
 				break;
-<<<<<<< Updated upstream
-=======
-				
-				
->>>>>>> Stashed changes
+
 			}
 			
 			default: {
