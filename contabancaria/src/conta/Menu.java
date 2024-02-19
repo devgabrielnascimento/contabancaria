@@ -81,8 +81,6 @@ public class Menu {
 			case 3: {
 				System.out.println("Seu saldo atual é: ");
 				System.out.println(c1.getSaldo());
-				System.out.println("Seu saldo atual: ");
-				System.out.println(c1.getSaldo());
 				
 				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
 				digito = sc.nextInt();
