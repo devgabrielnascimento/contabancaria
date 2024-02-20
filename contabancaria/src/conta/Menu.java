@@ -2,7 +2,8 @@ package conta;
 
 import java.util.Scanner;
 
-import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 
 
@@ -12,7 +13,10 @@ public class Menu {
 
 		Scanner sc = new Scanner(System.in);
 
-		Conta c1 = new Conta();
+		
+		ContaCorrente c1 = new ContaCorrente(0, 0, 0, null, 0);
+		ContaPoupanca c2 = new ContaPoupanca(1, 0, 0, null, 0);
+		
 		
 		System.out.println("Digite o número da conta: ");
 		int numConta = sc.nextInt();
@@ -20,13 +24,13 @@ public class Menu {
 		System.out.println("Digite a agência: ");
 		int numAgencia = sc.nextInt();
 		c1.setAgencia(numAgencia);
-		System.out.println("Digite o tipo: ");
-		int tipoConta = sc.nextInt();
+		System.out.println("Tipo: Conta Corrente");
+		int tipoConta = 1;
 		c1.setTipo(tipoConta);
 		System.out.println("Digite o titular: ");
 		String nomeTitular = sc.next();
 		c1.setTitular(nomeTitular);
-		
+
 		int digito = 4;
 		
 		String menu = "Olá, " + nomeTitular + "\nDigite a opção que você deseja:"
@@ -98,7 +102,21 @@ public class Menu {
 
 			
 		}
+		
 		c1.visualizar();
+		
+		
+		c2.setNumero(1000);
+		c2.setAgencia(30);
+		c2.setTipo(2);
+		c2.setTitular("Marcela");
+		c2.setSaldo(4000);
+		
+		System.out.println("Visualizando aqui uma Conta Poupança");
+		c2.visualizar();
+		
+		
+		
 		System.out.println("Programa finalizado.");
 		sc.close();
 	}

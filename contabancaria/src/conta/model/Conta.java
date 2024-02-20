@@ -11,6 +11,7 @@ public class Conta {
 	
 	public  Conta() {
 		
+	//Adicionando uma nova task
 	}
 
 
@@ -110,7 +111,7 @@ public class Conta {
 		System.out.println("");
 		System.out.println("Número da conta: " + getNumero());
 		System.out.println("Agência da conta: " + getAgencia());
-		System.out.println("Tipo da conta" + tipoConta);
+		System.out.println("Tipo da conta: " + tipoConta);
 		System.out.println("Titular da conta: " + getTitular());
 		System.out.println("Saldo da conta: " + getSaldo());
 		System.out.println("**********************************");
