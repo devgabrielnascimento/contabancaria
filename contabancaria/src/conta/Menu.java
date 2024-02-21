@@ -2,6 +2,7 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.Conta;
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
 
@@ -14,9 +15,8 @@ public class Menu {
 		Scanner sc = new Scanner(System.in);
 
 		
-		ContaCorrente c1 = new ContaCorrente(0, 0, 0, null, 0);
-		ContaPoupanca c2 = new ContaPoupanca(1, 0, 0, null, 0);
-		
+		Conta c1 = new ContaCorrente(0, 0, 0, null, 0);
+		Conta c2 = new ContaPoupanca(1, 0, 0, null, 0);
 		
 		System.out.println("Digite o número da conta: ");
 		int numConta = sc.nextInt();
