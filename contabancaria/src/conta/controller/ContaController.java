@@ -12,15 +12,16 @@ public class ContaController implements ContaRepository{
 		int numero = 0;
 	
 	
-		@Override
-		public void procurarPorNumero(int numero) {	
-			var conta = buscarNaCollection(numero);
-			
-			if (conta != null) 
-				conta.visualizar();
-			else
-				System.out.println("\nA conta número " + numero + "não foi encontrada");
-		};
+		
+		 @Override
+		    public void procurarPorNumero(int numero) {
+		        var conta = buscarNaCollection(numero);
+				
+				if (conta != null)
+					conta.visualizar();
+				else
+					System.out.println("\nA Conta número: " + numero + " não foi encontrada!");
+		    }
 		
 		@Override
 		public void listarTodas() {
@@ -28,12 +29,16 @@ public class ContaController implements ContaRepository{
 				conta.visualizar();
 			}
 		};
+		
+		@Override
 		public void cadastrar(Conta conta) {
 			
 			listaContas.add(conta);
 			System.out.println("\n A Conta número " + conta.getNumero() + " foi criada com sucesso!");
 			
 		};
+		
+		@Override
 		public void atualizar(Conta conta) {
 			var buscaConta = buscarNaCollection(numero);
 			
@@ -45,6 +50,8 @@ public class ContaController implements ContaRepository{
 				System.out.println("\n A conta número: " + conta.getNumero() + " não foi encontrada!");
 	
 		};
+		
+		@Override
 		public void deletar(int numero) {
 			var conta = buscarNaCollection(numero);
 			
@@ -75,6 +82,8 @@ public class ContaController implements ContaRepository{
 			}
 			
 		};
+		
+		@Override
 		public void depositar(int numero, float valor) {
 			
 			var conta = buscarNaCollection(numero);
@@ -88,6 +97,8 @@ public class ContaController implements ContaRepository{
 			
 			
 		};
+		
+		@Override
 		public void transferir(int numeroOrigem, int numeroDestino, float valor) {
 			
 			var contaOrigem = buscarNaCollection(numeroOrigem);
@@ -118,6 +129,7 @@ public class ContaController implements ContaRepository{
 					return conta;
 				}
 			}
+			
 			return null;
 		}
 
