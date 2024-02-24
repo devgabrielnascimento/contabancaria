@@ -2,115 +2,133 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.controller.ContaController;
 import conta.model.ContaCorrente;
-import conta.model.ContaPoupanca;
 
 public class Menu {
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
-		ContaCorrente c1 = new ContaCorrente(0, 0, 0, null, 0);
-		ContaPoupanca c2 = new ContaPoupanca(1, 0, 0, null, 0);
-
-		System.out.println("Digite o número da conta: ");
-		int numConta = sc.nextInt();
-		c1.setNumero(numConta);
-		System.out.println("Digite a agência: ");
-		int numAgencia = sc.nextInt();
-		c1.setAgencia(numAgencia);
-		System.out.println("Tipo: Conta Corrente");
-		int tipoConta = 1;
-		c1.setTipo(tipoConta);
-		System.out.println("Digite o titular: ");
-		String nomeTitular = sc.next();
-		c1.setTitular(nomeTitular);
-
-		int digito = 4;
-
-		String menu = "Olá, " + nomeTitular + "\nDigite a opção que você deseja:"
-				+ "\n 1 - Para Sacar"
-				+ "\n 2 - Para Depositar"
-				+ "\n 3 - Para visualizar seu saldo atual"
-				+ "\n 3 - Visualizar meu saldo atual"
-				+ "\n 0 - Para Sair";
-
-
-		while(digito != 0) {
-
+		ContaController contas = new ContaController();
+		
+		int opcao;
+		int numero;
+		int agencia;
+		int tipo = 2;
+		String titular = "";
+		float saldo = 0;
+		int limite = 0;
+		int resposta = 1 ;
+		String menu = "********************************************************************************"
+				+ "\n         SEJA BEM-VINDO, BEM-VINDA OU BEM-VINDE AO BANCO GENERATION!		"
+					+"\n                                MENU:				    			   "
+			        + "\n            		O que você deseja?                             "
+			        + "\nDIGITE ALGUMA DAS OPÇÕES ABAIXO PARA PROSSEGUIR:       					   "
+			        + "\n(1) Cadastrar \n(2) Atualizar Conta \n(3) Deletar Conta \n(4) Visualizar informações  "                                                       
+			        + "\n********************************************************************************";
+		
+		
+		do {
 			System.out.println(menu);
-
-			digito = sc.nextInt();
-
-			switch (digito) {
-			case 1: {
-
-				int valorSaque;
-				System.out.println("Qual valor você deseja sacar? ");
-				valorSaque = sc.nextInt();
-				if(c1.sacar(valorSaque)) {
-					System.out.println("Saque efetuado com sucesso. Novo saldo é de: " + c1.getSaldo());
-				}
-				else { 
-					System.out.println("O Saldo é insuficiente");
-				}
-
-				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
-				digito = sc.nextInt();
+			
+			opcao = sc.nextInt();
+			
+			switch (opcao) {
+			
+			case 1 : 
+				
+				System.out.println("Digite o nome do titular: ");
+				
+				sc.next();
+				titular = sc.nextLine();
+				
+				System.out.println("Digite o número da agência: ");
+				
+				agencia = sc.nextInt();
+				
+				
+				contas.cadastrar(new ContaCorrente(contas.gerarNumero(), agencia, tipo, titular, saldo, limite));
+				
+				System.out.println("Deseja continuar?\nDigite 1 para continuar ou qualquer tecla para sair");
+				resposta = sc.nextInt();
+				
+				break;
+				
+			
+			
+			
+			case 2 : 
+				
+				System.out.println("Qual é o número da conta que você deseja excluir?");
+				
+				numero = sc.nextInt();
+				
+				contas.deletar(numero);
+				
+				System.out.println("Deseja continuar?\nDigite 1 para continuar ou qualquer tecla para sair");
+				resposta = sc.nextInt();
+				
+				break;
+				
+				
+			
+			
+			case 3: 
+				
+				sc.next();
+				
+				System.out.println("Vamos atualizar a sua conta! ");
+				
+				System.out.println("Qual o número da sua conta");
+				
+				numero = sc.nextInt();
+				
+				System.out.println("Digite o nome do titular: ");
+				
+				titular = sc.nextLine();
+				
+				System.out.println("Digite o número da agência: ");
+				
+				agencia = sc.nextInt();
+				
+				contas.atualizar(new ContaCorrente(numero, agencia, tipo, titular, saldo, limite));
+				
+				System.out.println("Deseja continuar?\nDigite 1 para continuar ou qualquer tecla para sair");
+				resposta = sc.nextInt();
+				
+				break;
+				
+				
+			case 4 : 
+				System.out.println("Digite o número da sua conta para visualizar informações");
+				numero = sc.nextInt();
+				contas.procurarPorNumero(numero);
+				contas.listarTodas();
+				
+				System.out.println("Deseja continuar?\nDigite 1 para continuar ou qualquer tecla para sair");
+				resposta = sc.nextInt();
+				
+				break;
+			
+			
+			
+			default:
+				System.out.println("Ludiaaaa");
 				break;
 			}
-
-			case 2: {
-
-				int valorDeposito;
-				System.out.println("Qual valor você deseja depositar? ");
-				valorDeposito = sc.nextInt();
-
-				c1.depositar(valorDeposito);
-
-				System.out.println("Valor depositado com sucesso!");
-
-				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
-				digito = sc.nextInt();
-
-				break;
-
-			}
-
-			case 3: {
-				System.out.println("Seu saldo atual é: ");
-				System.out.println(c1.getSaldo());
-
-				System.out.println("Digite 0 se quiser sair, ou qualquer número para continuar");
-				digito = sc.nextInt();
-
-				break;
-
-			}
-
-			default: {
-				System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
-				break;
-			}
-
-			}
-
-		}
-
-		c1.visualizar();
-
-
-		c2.setNumero(1000);
-		c2.setAgencia(30);
-		c2.setTipo(2);
-		c2.setTitular("Marcela");
-		c2.setSaldo(4000);
-
-		System.out.println("Visualizando aqui uma Conta Poupança");
-		c2.visualizar();
-
+			
+			
+			
+			
+		} while (resposta == 1);
+		
 		System.out.println("Programa finalizado.");
+		
+			
+		
+		
 		sc.close();
+		
 	}
 }
