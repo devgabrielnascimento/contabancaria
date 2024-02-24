@@ -83,7 +83,7 @@ public class ContaController implements ContaRepository{
 				conta.depositar(valor);
 				System.out.println("\nO Depósito na Conta número: " + numero + " foi efetuado com sucesso!");
 			} else
-				System.out.println("\nA Conta número: " + numero + " não foi e ncontrada ou a Conta destino não é uma Conta Corrente");
+				System.out.println("\nA Conta número: " + numero + " não foi encontrada ou a Conta destino não é uma Conta Corrente");
 			
 			
 			
