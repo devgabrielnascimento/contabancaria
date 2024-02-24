@@ -25,7 +25,7 @@ public class Menu {
 					+"\n                                MENU:				    			   "
 			        + "\n            		O que você deseja?                             "
 			        + "\nDIGITE ALGUMA DAS OPÇÕES ABAIXO PARA PROSSEGUIR:       					   "
-			        + "\n(1) Cadastrar \n(2) Atualizar Conta \n(3) Deletar Conta \n(4) Visualizar informações ou \n(5)Para sair "                                                       
+			        + "\n(1) Cadastrar \n(2) Deletar Conta  \n(3) Atualizar Conta \n(4) Visualizar informações ou \n(5) Para sair "                                                       
 			        + "\n********************************************************************************";
 		
 		
@@ -85,8 +85,6 @@ public class Menu {
 			
 			
 			case 3: 
-				
-				sc.next();
 				
 				System.out.println("Vamos atualizar a sua conta! ");
 				
