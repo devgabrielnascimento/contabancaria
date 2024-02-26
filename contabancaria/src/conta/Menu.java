@@ -19,10 +19,17 @@ public class Menu {
 		float saldo, limite, valor;
 		String menu = "********************************************************************************"
 				+ "\n         SEJA BEM-VINDO, BEM-VINDA OU BEM-VINDE AO BANCO GENERATION!		"
-				+ "\n                                MENU:				    			   "
+				+ "\n            		                                               "
+				+ "\n                               [MENU]				    			   "
+				+ "\n            		                                               "
 				+ "\n            		O que você deseja?                             "
-				+ "\nDIGITE ALGUMA DAS OPÇÕES ABAIXO PARA PROSSEGUIR:       					   "
-				+ "\n(1) Cadastrar \n(2) Deletar Conta  \n(3) Atualizar Conta \n(4) Visualizar informações \n(5) Sacar \n(6) Depositar  \n(7) Transferir ou \n(8) Para sair "
+				+ "\n            		                                               "
+				+ "\n          DIGITE ALGUMA DAS OPÇÕES ABAIXO PARA PROSSEGUIR:       		    "
+				+ "\n                                                               		    "
+				+ "\n(1) Cadastrar (2) Deletar Conta " 
+				+ "\n(3) Atualizar Conta (4) Visualizar informações"
+				+ "\n(5) Sacar  (6) Depositar" 
+				+ "\n(7) Transferir ou  (8) Para sair"
 				+ "\n********************************************************************************";
 
 		while (resposta.equals("1")) {
