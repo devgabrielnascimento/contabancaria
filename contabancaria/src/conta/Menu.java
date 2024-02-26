@@ -188,8 +188,10 @@ public class Menu {
 				break;
 
 			case 8:
-				System.out.println("Programa finalizado! ");
 				
+				System.out.println("Todas as contas criadas nesse sistema: ");
+				contas.listarTodas();
+				System.out.println("Programa finalizado! ");
 				System.exit(0);
 				sc.close();
 
@@ -199,9 +201,7 @@ public class Menu {
 
 		}
 
-		System.out.println("Todas as contas criadas nesse sistema: ");
-		contas.listarTodas();
-		System.out.println("Programa finalizado. Até a próxima!");
+		
 
 	}
 
