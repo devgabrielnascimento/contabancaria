@@ -109,6 +109,12 @@ public class ContaController implements ContaRepository{
 				if (contaOrigem.sacar(valor) == true) {
 					contaDestino.depositar(valor);
 					System.out.println("\nA transferência foi efetuada com sucesso!");
+					System.out.println("\nVocê realizou uma transferência no valor " 
+					+ valor 
+					+ " para " + buscarNaCollection(numeroDestino).getTitular()
+					+ "\n"
+					+ "\nSeu saldo atual é de: " 
+					+ buscarNaCollection(numeroOrigem).getSaldo());
 				}
 				
 				else 
