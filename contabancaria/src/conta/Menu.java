@@ -172,11 +172,11 @@ public class Menu {
 				System.out.println("Transferência entre Contas: ");
 
 				System.out.println("Digite o Numero da Conta de Origem: ");
-				
+
 				numeroOrigem = sc.nextInt();
-				
+
 				System.out.println("Digite o Numero da Conta de Destino: ");
-				
+
 				numeroDestino = sc.nextInt();
 
 				do {
@@ -188,7 +188,7 @@ public class Menu {
 				break;
 
 			case 8:
-				
+
 				System.out.println("Todas as contas criadas nesse sistema: ");
 				contas.listarTodas();
 				System.out.println("Programa finalizado! ");
@@ -200,8 +200,6 @@ public class Menu {
 			}
 
 		}
-
-		
 
 	}
 
