@@ -15,7 +15,7 @@ public class ContaController implements ContaRepository{
 		
 		 @Override
 		    public void procurarPorNumero(int numero) {
-		        var conta = buscarNaCollection(numero);
+		        Conta conta = buscarNaCollection(numero);
 				
 				if (conta != null)
 					conta.visualizar();
@@ -25,7 +25,7 @@ public class ContaController implements ContaRepository{
 		
 		@Override
 		public void listarTodas() {
-			for (var conta : listaContas) {
+			for (Conta conta : listaContas) {
 				conta.visualizar();
 			}
 		};
@@ -40,10 +40,10 @@ public class ContaController implements ContaRepository{
 		
 		@Override
 		public void atualizar(Conta conta) {
-			var buscaConta = buscarNaCollection(numero);
+			Conta buscarConta = buscarNaCollection(numero);
 			
-			if (buscaConta != null) {
-				listaContas.set(listaContas.indexOf(buscaConta), conta);
+			if (buscarConta != null) {
+				listaContas.set(listaContas.indexOf(conta), conta);
 				System.out.println("\nA conta número: " + conta.getNumero() + " foi atualizada com sucesso");
 		
 			} else
@@ -53,7 +53,7 @@ public class ContaController implements ContaRepository{
 		
 		@Override
 		public void deletar(int numero) {
-			var conta = buscarNaCollection(numero);
+			Conta conta = buscarNaCollection(numero);
 			
 			if (conta != null) {
 				if (listaContas.remove(conta) == true)
@@ -72,7 +72,7 @@ public class ContaController implements ContaRepository{
 		@Override
 		public void sacar(int numero, float valor) {
 			
-			var conta = buscarNaCollection(numero);
+			Conta conta = buscarNaCollection(numero);
 			
 			if (conta != null) {
 				
@@ -86,7 +86,7 @@ public class ContaController implements ContaRepository{
 		@Override
 		public void depositar(int numero, float valor) {
 			
-			var conta = buscarNaCollection(numero);
+			Conta conta = buscarNaCollection(numero);
 			
 			if (conta != null) {
 				conta.depositar(valor);
@@ -109,7 +109,7 @@ public class ContaController implements ContaRepository{
 				if (contaOrigem.sacar(valor) == true) {
 					contaDestino.depositar(valor);
 					System.out.println("\nA transferência foi efetuada com sucesso!");
-					System.out.println("\nVocê realizou uma transferência no valor " 
+					System.out.println("\nVocê realizou uma transferência no valor de" 
 					+ valor 
 					+ " para " + buscarNaCollection(numeroDestino).getTitular()
 					+ "\n"
@@ -130,7 +130,7 @@ public class ContaController implements ContaRepository{
 		
 		
 		public Conta buscarNaCollection(int numero) {
-			for (var conta : listaContas) {
+			for (Conta conta : listaContas) {
 				if (conta.getNumero() == numero) {
 					return conta;
 				}

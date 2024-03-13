@@ -41,7 +41,7 @@ public class Menu {
 
 			case 1:
 
-				System.out.println("Digite o nome do titular: ");
+				System.out.println(Cores.TEXT_RED_BOLD + "Digite o nome do titular: ");
 				sc.nextLine();
 				titular = sc.nextLine();
 
